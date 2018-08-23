@@ -1,0 +1,21 @@
+<h1>Listing all articles</h1>
+
+<p>
+<%= link_to "Create new article", new_article_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+	</tr>
+
+	<% @articles.each do |article| %> <!-- article is tha name of the variable, can set anything you like -->
+	<tr>
+		<td><%= article.title %> </td>    <!-- |article|.title -->
+		<td><%= article.description %></td> <!-- |article|.description -->
+		<td><%= link_to "Edit", edit_article_path(article) %></td> <!-- (|article|)-->
+		<td><%= link_to "Show", article_path(article) %></td> <!-- (|article|)-->
+	</tr>
+	<% end %>
+</table>
