@@ -1,3 +1,4 @@
+<%= link_to "Home Page", root_path %>
 <h1>Listing all articles</h1>
 
 <p>
@@ -16,6 +17,8 @@
 		<td><%= article.description %></td> <!-- |article|.description -->
 		<td><%= link_to "Edit", edit_article_path(article) %></td> <!-- (|article|)-->
 		<td><%= link_to "Show", article_path(article) %></td> <!-- (|article|)-->
+		<td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
 	</tr>
 	<% end %>
 </table>
+
